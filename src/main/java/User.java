@@ -1,9 +1,6 @@
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
-import java.util.HashMap;
-import java.util.Map;
-
 @Data
 @AllArgsConstructor
 public class User {
@@ -14,8 +11,9 @@ public class User {
     private int age;
     private Sex sex;
 
-    public enum sex {
-        MALE, FEMALE
+
+    public boolean equals(User otherUser) {
+        return (otherUser.getName().equals(this.getName()) && (otherUser.getAge() == this.getAge()) && (otherUser.getSex() == this.getSex()));
     }
 
 
